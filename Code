@@ -1,0 +1,18 @@
+import random
+
+upper = 10
+lower = 1
+
+correct_number = (random.randint(lower, upper))
+guess = int(input('Tek guess: '))
+
+while correct_number != guess:
+    print('Take another guess')
+    if correct_number > guess:
+        print('higher my g')
+        guess = int(input('Tek guess: '))
+    if correct_number < guess:
+        print('Lower my g')
+        guess = int(input('Tek guess: '))
+    if correct_number == guess:
+        print('NOICEE')
