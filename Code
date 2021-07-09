@@ -1,18 +1,30 @@
 import random
 
-upper = 10
+upper = 15
 lower = 1
 
 correct_number = (random.randint(lower, upper))
 guess = int(input('Tek guess: '))
+guess_count = 0
 
 while correct_number != guess:
-    print('Take another guess')
+
+
+    if guess_count == 3:
+        print('Out of luck pal. Took more than 4 guesses.')
+        break
+
     if correct_number > guess:
         print('higher my g')
+        guess_count = guess_count + 1
+        print('You have made ' + str(guess_count) + '/4 guesses')
         guess = int(input('Tek guess: '))
+
     if correct_number < guess:
         print('Lower my g')
+        guess_count = guess_count + 1
+        print('You have made ' + str(guess_count) + '/4 guesses')
         guess = int(input('Tek guess: '))
     if correct_number == guess:
         print('NOICEE')
+        break
